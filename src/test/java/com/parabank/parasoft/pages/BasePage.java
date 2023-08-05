@@ -33,6 +33,7 @@ public class BasePage extends Page {
     public List<WebElement> getWebElements(By locator) {
         List<WebElement> webElements = null;
         try {
+            waitForWebElement(locator);
             webElements = driver.findElements(locator);
         } catch (Exception exception) {
             System.out.println(locator.toString() + " No found");

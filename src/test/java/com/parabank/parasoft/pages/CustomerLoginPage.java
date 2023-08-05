@@ -45,4 +45,8 @@ public class CustomerLoginPage extends BasePage {
                 .fillPassword(password)
                 .clickLoginBtn();
     }
+
+    public boolean hasError() {
+        return getWebElements(By.className("error")).size() > 0;
+    }
 }
