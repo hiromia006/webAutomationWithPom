@@ -16,4 +16,9 @@ public class HomePage extends BasePage {
         getWebElement(By.linkText("Open New Account")).click();
         return getInstance(OpenNewAccountPage.class);
     }
+
+    public TransferFundsPage clickTransferFundsLink() {
+        getWebElement(By.linkText("Transfer Funds")).click();
+        return getInstance(TransferFundsPage.class);
+    }
 }
