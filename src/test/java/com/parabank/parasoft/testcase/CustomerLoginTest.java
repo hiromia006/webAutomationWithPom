@@ -2,6 +2,7 @@ package com.parabank.parasoft.testcase;
 
 import com.parabank.parasoft.pages.CustomerLoginPage;
 import com.parabank.parasoft.pages.HomePage;
+import com.parabank.parasoft.util.ParaBankString;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,29 +17,29 @@ public class CustomerLoginTest extends BaseTest {
     @Test
     public void loginShouldFailWithoutPassword() {
         CustomerLoginPage loginPage = page.getInstance(CustomerLoginPage.class)
-                .doLogin("sqa");
+                .doLogin(getUsername());
         Assert.assertTrue(loginPage.hasError());
     }
 
     @Test
     public void verifyLoginPageTittle() {
         CustomerLoginPage loginPage = page.getInstance(CustomerLoginPage.class);
-        Assert.assertTrue(loginPage.getPageTittle().contains("ParaBank"));
+        Assert.assertEquals(loginPage.getPageTittle(), ParaBankString.LOGIN_TITLE);
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void loginShouldSucceed() {
         HomePage homePage = page.getInstance(CustomerLoginPage.class)
-                .fillUsername("sqa")
-                .fillPassword("sqa")
+                .fillUsername(getUsername())
+                .fillPassword(getPassword())
                 .clickLoginBtn();
         Assert.assertTrue(homePage.hasLogoutLink());
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void loginShouldSucceed2() {
         HomePage homePage = page.getInstance(CustomerLoginPage.class)
-                .doLogin("sqa", "sqa");
+                .doLogin(getUsername(), getPassword());
         Assert.assertTrue(homePage.hasLogoutLink());
     }
 }

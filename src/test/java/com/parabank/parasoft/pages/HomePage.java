@@ -11,4 +11,9 @@ public class HomePage extends BasePage {
     public boolean hasLogoutLink() {
         return getWebElements(By.linkText("Log Out")).size() > 0;
     }
+
+    public OpenNewAccountPage clickOpenAccountLink() {
+        getWebElement(By.linkText("Open New Account")).click();
+        return getInstance(OpenNewAccountPage.class);
+    }
 }
