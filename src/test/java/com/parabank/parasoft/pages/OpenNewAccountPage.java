@@ -1,5 +1,6 @@
 package com.parabank.parasoft.pages;
 
+import com.parabank.parasoft.util.General;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -10,6 +11,7 @@ public class OpenNewAccountPage extends BasePage {
     }
 
     public OpenNewAccountPage selectAccountType(int index) {
+        General.waitForDomStable();
         new Select(getWebElement(By.id("type"))).selectByIndex(index);
         return this;
     }

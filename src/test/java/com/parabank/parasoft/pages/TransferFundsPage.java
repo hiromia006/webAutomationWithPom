@@ -1,5 +1,6 @@
 package com.parabank.parasoft.pages;
 
+import com.parabank.parasoft.util.General;
 import com.parabank.parasoft.util.ParaBankString;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ public class TransferFundsPage extends BasePage {
     }
 
     public TransferFundsPage fillAmount(double amount) {
+        General.waitForDomStable();
         getWebElement(By.id("amount")).sendKeys(String.valueOf(amount));
         return this;
     }
