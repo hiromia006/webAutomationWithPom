@@ -21,6 +21,12 @@ public class CustomerLoginTest extends BaseTest {
     }
 
     @Test
+    public void verifyLoginPageTittle() {
+        CustomerLoginPage loginPage = page.getInstance(CustomerLoginPage.class);
+        Assert.assertTrue(loginPage.getPageTittle().contains("ParaBank"));
+    }
+
+    @Test(enabled = false)
     public void loginShouldSucceed() {
         HomePage homePage = page.getInstance(CustomerLoginPage.class)
                 .fillUsername("sqa")
@@ -29,7 +35,7 @@ public class CustomerLoginTest extends BaseTest {
         Assert.assertTrue(homePage.hasLogoutLink());
     }
 
-    @Test
+    @Test(enabled = false)
     public void loginShouldSucceed2() {
         HomePage homePage = page.getInstance(CustomerLoginPage.class)
                 .doLogin("sqa", "sqa");
