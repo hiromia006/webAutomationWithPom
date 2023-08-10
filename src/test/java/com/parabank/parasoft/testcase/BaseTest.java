@@ -56,12 +56,13 @@ public class BaseTest {
             driver = new FirefoxDriver();
 
         } else if (Objects.equals(browserName, "chromeHeadless")) {
-            if (osName.contains("Windows")) {
-                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver.exe");
-            } else {
-                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver");
-            }
+//            if (osName.contains("Windows")) {
+//                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver.exe");
+//            } else {
+//                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver");
+//            }
 
+            WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
             driver = new ChromeDriver(options);
