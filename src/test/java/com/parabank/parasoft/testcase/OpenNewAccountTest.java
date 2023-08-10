@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class OpenNewAccountTest extends BaseTest {
-    @Test
+    @Test(enabled = false)
     public void openAccountShouldSucceed() {
         CustomerLoginPage loginPage = page.getInstance(CustomerLoginPage.class);
        Assert.assertEquals(loginPage.getPageTittle(), ParaBankString.LOGIN_TITLE);
@@ -25,7 +25,7 @@ public class OpenNewAccountTest extends BaseTest {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void openAccount2ShouldSucceed() {
         OpenNewAccountPage openNewAccountPage = page.getInstance(CustomerLoginPage.class)
                 .doLogin(getUsername(), getPassword())

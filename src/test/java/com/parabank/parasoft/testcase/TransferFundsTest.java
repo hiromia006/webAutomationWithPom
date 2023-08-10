@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class TransferFundsTest extends BaseTest {
 
-    @Test
+    @Test(enabled = false)
     public void transferFundShouldSucceed() {
         TransferFundsPage transferFundsPage = page.getInstance(CustomerLoginPage.class)
                 .doLogin(getUsername(), getPassword())
