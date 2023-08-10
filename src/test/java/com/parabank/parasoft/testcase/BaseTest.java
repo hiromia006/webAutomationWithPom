@@ -63,8 +63,12 @@ public class BaseTest {
 //            }
 
             WebDriverManager.chromedriver().setup();
+
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--ignore-ssl-errors=yes");
+            options.addArguments("--ignore-certificate-errors");
             driver = new ChromeDriver(options);
 
         } else if (Objects.equals(browserName, "firefoxHeadless")) {
