@@ -75,6 +75,7 @@ public class BaseTest {
             System.out.println("Please provide proper Browser Name");
         }
 
+
         driver.get("https://parabank.parasoft.com/parabank/index.htm");
         driver.manage().window().maximize();
 
