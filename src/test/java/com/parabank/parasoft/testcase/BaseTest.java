@@ -21,11 +21,12 @@ public class BaseTest {
     WebDriver driver;
     private Properties properties;
     Page page;
+    private String defaultProjectPath = System.getProperty("user.dir");
 
 
     public BaseTest() {
         try {
-            String filePath = System.getProperty("user.dir") + "/src/test/resources/config.properties";
+            String filePath = defaultProjectPath + "/src/test/resources/config.properties";
             properties = new Properties();
             FileInputStream inputStream = new FileInputStream(filePath);
             properties.load(inputStream);
@@ -40,17 +41,26 @@ public class BaseTest {
     @BeforeMethod
     public void setUpBrowser() {
         String browserName = properties.getProperty("browserName");
-        System.out.println("OS Name "+System.getProperty("os.name"));
+        System.out.println("OS Name " + System.getProperty("os.name"));
+        String osName = System.getProperty("os.name");
 
         if (Objects.equals(browserName, "chrome")) {
-            WebDriverManager.chromedriver().setup();
+            if (osName.contains("Windows")) {
+                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver.exe");
+            } else {
+                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver");
+            }
             driver = new ChromeDriver();
         } else if (Objects.equals(browserName, "firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
         } else if (Objects.equals(browserName, "chromeHeadless")) {
-            WebDriverManager.chromedriver().setup();
+            if (osName.contains("Windows")) {
+                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver.exe");
+            } else {
+                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver");
+            }
 
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
@@ -79,7 +89,6 @@ public class BaseTest {
     public String getPassword() {
         return properties.getProperty("password");
     }
-
 
 
     @AfterMethod
