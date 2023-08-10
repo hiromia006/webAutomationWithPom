@@ -40,6 +40,7 @@ public class BaseTest {
     @BeforeMethod
     public void setUpBrowser() {
         String browserName = properties.getProperty("browserName");
+        System.out.println("OS Name "+System.getProperty("os.name"));
 
         if (Objects.equals(browserName, "chrome")) {
             WebDriverManager.chromedriver().setup();

@@ -17,7 +17,7 @@ dependencies {
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
 
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
-    testImplementation 'io.github.bonigarcia:webdrivermanager:5.4.1'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.0'
 
     // https://mvnrepository.com/artifact/log4j/log4j
     testImplementation 'log4j:log4j:1.2.17'
