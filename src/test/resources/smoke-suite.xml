@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="com.parabank.parasoft.util.ExtentReporterNG"></listener>
     </listeners>
-    <test verbose="2" preserve-order="true" name="dd">
+    <test verbose="2" preserve-order="true" name="Smoke Suites">
         <classes>
             <class name="com.parabank.parasoft.testcase.CustomerLoginTest"></class>
         </classes>

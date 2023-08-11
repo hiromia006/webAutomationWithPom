@@ -29,8 +29,17 @@ dependencies {
 }
 
 test {
+//    useTestNG() {
+//        suites 'src/test/resources/smokeSuites.xml'
+//        outputDirectory = file("$projectDir/build/testngReport")
+//    }
+
     useTestNG() {
-        useDefaultListeners = true
-        suites('$projectDir/src/test/resources/smokeSuites.xml')
+        if (project.hasProperty('testng.suites')) {
+            project.property('testng.suites').toString().split(',').each { suite ->
+                suites 'src/test/resources/' + suite + '-suite.xml'
+            }
+        }
     }
+
 }
