@@ -29,11 +29,6 @@ dependencies {
 }
 
 test {
-//    useTestNG() {
-//        suites 'src/test/resources/smokeSuites.xml'
-//        outputDirectory = file("$projectDir/build/testngReport")
-//    }
-
     useTestNG() {
         if (project.hasProperty('testng.suites')) {
             project.property('testng.suites').toString().split(',').each { suite ->
