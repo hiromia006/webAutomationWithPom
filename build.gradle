@@ -29,5 +29,8 @@ dependencies {
 }
 
 test {
-   useTestNG()
+    useTestNG() {
+        useDefaultListeners = true
+        suites('$projectDir/src/test/resources/smokeSuites.xml')
+    }
 }
