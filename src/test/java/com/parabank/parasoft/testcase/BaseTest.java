@@ -1,13 +1,16 @@
 package com.parabank.parasoft.testcase;
 
+import com.aventstack.extentreports.Status;
 import com.parabank.parasoft.pages.BasePage;
 import com.parabank.parasoft.pages.Page;
+import com.parabank.parasoft.report.ReportTestManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -18,7 +21,7 @@ import java.util.Objects;
 import java.util.Properties;
 
 public class BaseTest {
-    WebDriver driver;
+    protected WebDriver driver;
     private Properties properties;
     Page page;
     private String defaultProjectPath = System.getProperty("user.dir");
@@ -94,5 +97,9 @@ public class BaseTest {
     @AfterMethod
     public void dearTown() {
         driver.quit();
+    }
+
+    public WebDriver getWebDriver() {
+        return driver;
     }
 }

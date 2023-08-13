@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CustomerLoginTest extends BaseTest {
-    @Test
+    @Test(description = "Provide invalid username & Password")
     public void loginShouldFailWithoutCredential() {
         CustomerLoginPage loginPage = page.getInstance(CustomerLoginPage.class)
                 .doLogin();
