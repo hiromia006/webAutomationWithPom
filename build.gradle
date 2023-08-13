@@ -23,7 +23,11 @@ dependencies {
     testImplementation 'log4j:log4j:1.2.17'
 
     // https://mvnrepository.com/artifact/com.relevantcodes/extentreports
-    testImplementation 'com.relevantcodes:extentreports:2.41.2'
+//    testImplementation 'com.relevantcodes:extentreports:2.41.2'
+
+    // https://mvnrepository.com/artifact/com.aventstack/extentreports
+    testImplementation 'com.aventstack:extentreports:5.1.0'
+
 
 
 }
