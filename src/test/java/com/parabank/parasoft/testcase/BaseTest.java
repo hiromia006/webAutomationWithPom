@@ -55,6 +55,9 @@ public class BaseTest {
             }
             driver = new ChromeDriver();
         } else if (Objects.equals(browserName, "firefox")) {
+            //logging disable
+            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
@@ -69,6 +72,8 @@ public class BaseTest {
             driver = new ChromeDriver(options);
 
         } else if (Objects.equals(browserName, "firefoxHeadless")) {
+            //logging disable
+            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
             WebDriverManager.firefoxdriver().setup();
 
             FirefoxOptions options = new FirefoxOptions();
