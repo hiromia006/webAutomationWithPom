@@ -101,5 +101,9 @@ public class BaseTest {
         driver.quit();
     }
 
+    public WebDriver getWebDriver() {
+        return driver;
+    }
+
 
 }

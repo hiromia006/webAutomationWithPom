@@ -19,15 +19,9 @@ dependencies {
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.0'
 
-    // https://mvnrepository.com/artifact/log4j/log4j
-    testImplementation 'log4j:log4j:1.2.17'
-
-    // https://mvnrepository.com/artifact/com.relevantcodes/extentreports
-//    testImplementation 'com.relevantcodes:extentreports:2.41.2'
-
+     //Extent Report
     // https://mvnrepository.com/artifact/com.aventstack/extentreports
     testImplementation 'com.aventstack:extentreports:5.1.0'
-
 
 
 }

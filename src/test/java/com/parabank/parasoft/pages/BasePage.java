@@ -1,5 +1,7 @@
 package com.parabank.parasoft.pages;
 
+import com.aventstack.extentreports.Status;
+import com.parabank.parasoft.report.ReportTestManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,6 +25,7 @@ public class BasePage extends Page {
         try {
             waitForWebElement(locator);
             webElement = driver.findElement(locator);
+            addInfoLog("has been located " + locator.toString());
         } catch (Exception exception) {
             System.out.println(locator.toString() + " No found");
         }
@@ -48,6 +51,11 @@ public class BasePage extends Page {
         } catch (Exception exception) {
             System.out.println(locator.toString() + " Not Loading");
         }
+    }
+
+    public void addInfoLog(String message) {
+        if (ReportTestManager.getTest() != null)
+            ReportTestManager.getTest().log(Status.INFO, message);
     }
 
 }
