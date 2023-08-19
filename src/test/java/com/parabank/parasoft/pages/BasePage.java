@@ -1,9 +1,8 @@
 package com.parabank.parasoft.pages;
 
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.parabank.parasoft.report.ReportTestManager;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
@@ -24,10 +23,8 @@ public class BasePage extends Page {
         try {
             waitForWebElement(locator);
             webElement = driver.findElement(locator);
-            addInfoLog("has been located " + locator.toString());
         } catch (Exception exception) {
             System.out.println(locator.toString() + " No found");
-            addFailLog(locator.toString() + " has not been found.");
         }
         return webElement;
     }
@@ -38,10 +35,8 @@ public class BasePage extends Page {
         try {
             waitForWebElement(locator);
             webElements = driver.findElements(locator);
-            addInfoLog("has been located " + locator.toString());
         } catch (Exception exception) {
             System.out.println(locator.toString() + " No found");
-            addFailLog(locator.toString() + " has not been found.");
         }
         return webElements;
     }
@@ -55,18 +50,4 @@ public class BasePage extends Page {
         }
     }
 
-    public void addInfoLog(String message) {
-        if (ReportTestManager.getTest() != null)
-            ReportTestManager.getTest().log(Status.INFO, message);
-    }
-
-    public void addFailLog(String message) {
-        if (ReportTestManager.getTest() != null)
-            ReportTestManager.getTest().log(Status.FAIL, message);
-        // Take base64Screenshot screenshot.
-        String base64Screenshot = "data:image/png;base64,"
-                + ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
-        ReportTestManager.getTest().fail("details2",
-                MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
-    }
 }
