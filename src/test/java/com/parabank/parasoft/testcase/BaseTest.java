@@ -45,16 +45,7 @@ public class BaseTest {
         String osName = System.getProperty("os.name");
 
         if (Objects.equals(browserName, "chrome")) {
-//            if (osName.contains("Windows")) {
-//                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver.exe");
-//            } else {
-//                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver");
-//            }
-//
-            WebDriverManager.chromedriver().clearDriverCache().setup();
-            WebDriverManager.chromedriver().clearResolutionCache().setup();
             WebDriverManager.chromedriver().setup();
-
             driver = new ChromeDriver();
         } else if (Objects.equals(browserName, "firefox")) {
             //logging disable
