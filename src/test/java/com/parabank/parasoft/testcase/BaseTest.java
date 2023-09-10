@@ -50,11 +50,15 @@ public class BaseTest {
 //            } else {
 //                System.setProperty("webdriver.chrome.driver", defaultProjectPath + "/src/test/resources/drivers/chromedriver");
 //            }
+//
+            WebDriverManager.chromedriver().clearDriverCache().setup();
+            WebDriverManager.chromedriver().clearResolutionCache().setup();
             WebDriverManager.chromedriver().setup();
+
             driver = new ChromeDriver();
         } else if (Objects.equals(browserName, "firefox")) {
             //logging disable
-            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+//            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
 
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
@@ -71,7 +75,7 @@ public class BaseTest {
 
         } else if (Objects.equals(browserName, "firefoxHeadless")) {
             //logging disable
-            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+//            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
             WebDriverManager.firefoxdriver().setup();
 
             FirefoxOptions options = new FirefoxOptions();
