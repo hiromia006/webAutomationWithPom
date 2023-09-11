@@ -19,7 +19,7 @@ dependencies {
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.3'
 
-     //Extent Report
+    //Extent Report
     // https://mvnrepository.com/artifact/com.aventstack/extentreports
     testImplementation 'com.aventstack:extentreports:5.1.0'
 
@@ -27,12 +27,7 @@ dependencies {
 }
 
 test {
-    useTestNG() {
-        if (project.hasProperty('testng.suites')) {
-            project.property('testng.suites').toString().split(',').each { suite ->
-                suites 'src/test/resources/' + suite + '-suite.xml'
-            }
-        }
-    }
+
+    useTestNG()
 
 }
