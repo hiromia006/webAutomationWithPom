@@ -9,6 +9,6 @@
    7. Mail pluging
    8. Selenium WebDriver
    9. TestNG
-   10. Extended Repor
+   10. Extended Report
    11. GitHub
  ##       
