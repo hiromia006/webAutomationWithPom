@@ -11,4 +11,5 @@
    9. TestNG
    10. Extended Report
    11. GitHub
- ##       
+ ## Note
+ 1. Run the command from Manage jenkins > Command CLI : System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts; default-src 'self'; script-src * 'unsafe-eval'; img-src *; style-src * 'unsafe-inline'; font-src *");
