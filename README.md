@@ -11,9 +11,12 @@
    9. TestNG
    10. Extended Report
    11. GitHub
+       
  ## Email configuration for Jenkins | SMTP configuration
+ 1. Email configure from from Manage jenkins > System > Extended E-mail Notification:
+    
  ## Note
- 1. Run the command from Manage jenkins > Command CLI :
+ 1. Run the command from Manage jenkins > Script Console :
     ```
     System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts; default-src 'self'; script-src * 'unsafe-eval'; img-src *; style-src * 'unsafe-inline'; font-src *");
   ```
