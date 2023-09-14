@@ -11,6 +11,7 @@
    9. TestNG
    10. Extended Report
    11. GitHub
+ ## Email configuration for Jenkins | SMTP configuration
  ## Note
  1. Run the command from Manage jenkins > Command CLI :
     ```
