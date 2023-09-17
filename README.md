@@ -14,6 +14,7 @@
        
  ## Email configuration for Jenkins | SMTP configuration
  1. Email configure from from Manage jenkins > System > E-mail Notification:
+ 2. Email configure from from Manage jenkins > System > Extended E-mail Notification
     
  ## Note
  1. Run the command from Manage jenkins > Script Console :
