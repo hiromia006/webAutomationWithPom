@@ -27,17 +27,8 @@ dependencies {
     testImplementation 'com.thedeanda:lorem:2.2'
 
 
-
 }
 
 test {
-
-        useTestNG() {
-        if (project.hasProperty('testng.suites')) {
-            project.property('testng.suites').toString().split(',').each { suite ->
-                suites 'src/test/resources/' + suite + '-suite.xml'
-            }
-        }
-    }
-
+    useTestNG()
 }
