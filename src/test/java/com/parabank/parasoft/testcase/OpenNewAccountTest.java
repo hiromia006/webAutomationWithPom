@@ -8,13 +8,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class OpenNewAccountTest extends BaseTest {
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void openAccountShouldSucceed() {
         CustomerLoginPage loginPage = page.getInstance(CustomerLoginPage.class);
-       Assert.assertEquals(loginPage.getPageTittle(), ParaBankString.LOGIN_TITLE);
+        Assert.assertEquals(loginPage.getPageTittle(), ParaBankString.LOGIN_TITLE);
 
         HomePage homePage = loginPage
-                .doLogin(getUsername(), getPassword());
+                .clickRegistrationLink()
+                .doRegistration();
         Assert.assertTrue(homePage.hasLogoutLink());
 
         OpenNewAccountPage openNewAccountPage = homePage

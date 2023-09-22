@@ -23,6 +23,10 @@ dependencies {
     // https://mvnrepository.com/artifact/com.aventstack/extentreports
     testImplementation 'com.aventstack:extentreports:5.1.0'
 
+    // https://mvnrepository.com/artifact/com.thedeanda/lorem
+    testImplementation 'com.thedeanda:lorem:2.2'
+
+
 
 }
 

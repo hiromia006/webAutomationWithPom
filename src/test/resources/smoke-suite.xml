@@ -7,6 +7,8 @@
     <test verbose="2" preserve-order="true" name="Smoke Suites">
         <classes>
             <class name="com.parabank.parasoft.testcase.CustomerLoginTest"></class>
+            <class name="com.parabank.parasoft.testcase.RegisterTest"></class>
+            <class name="com.parabank.parasoft.testcase.OpenNewAccountTest"></class>
         </classes>
     </test>
 </suite>

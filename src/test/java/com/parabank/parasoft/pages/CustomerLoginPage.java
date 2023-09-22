@@ -1,5 +1,6 @@
 package com.parabank.parasoft.pages;
 
+import com.parabank.parasoft.util.General;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -44,6 +45,12 @@ public class CustomerLoginPage extends BasePage {
         return fillUsername(username)
                 .fillPassword(password)
                 .clickLoginBtn();
+    }
+
+    public RegisterPage clickRegistrationLink(){
+        General.waitForDomStable();
+        getWebElement(By.linkText("Register")).click();
+        return getInstance(RegisterPage.class);
     }
 
     public boolean hasError() {

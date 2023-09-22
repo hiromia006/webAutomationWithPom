@@ -1,6 +1,7 @@
 package com.parabank.parasoft.pages;
 
 import com.parabank.parasoft.util.General;
+import com.thedeanda.lorem.LoremIpsum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -40,14 +41,30 @@ public class RegisterPage extends BasePage {
         return this;
     }
 
-    public RegisterPage fillPhone(int phone) {
+    public RegisterPage fillPhone(String phone) {
         getWebElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(String.valueOf(phone));
         return this;
     }
 
-    public RegisterPage fillSsn(String ssn){
-
+    public RegisterPage fillSsn(String ssn) {
+        getWebElement(By.id("customer.ssn")).sendKeys(ssn);
         return this;
+    }
+
+    public RegisterPage fillUsername(String username) {
+        getWebElement(By.id("customer.username")).sendKeys(username);
+        return this;
+    }
+
+    public RegisterPage fillPassword(String password) {
+        getWebElement(By.id("customer.password")).sendKeys(password);
+        return this;
+    }
+
+    public RegisterPage fillConfirmPassword(String rePassword) {
+        getWebElement(By.id("repeatedPassword")).sendKeys(rePassword);
+        return this;
+
     }
 
     public HomePage clickRegisterBtn() {
@@ -55,7 +72,28 @@ public class RegisterPage extends BasePage {
         return getInstance(HomePage.class);
     }
 
-    public Boolean hasUpdateSuccess() {
-        return getWebElements(By.xpath("//h1[@class='title']")).size() > 0;
+    public RegisterPage clickRegisterLink() {
+        getWebElement(By.cssSelector("input.button[value='Register']")).click();
+        return this;
+    }
+
+    public Boolean hasError() {
+        return getWebElements(By.className("error")).size() > 0;
+    }
+
+    public HomePage doRegistration() {
+        String username = LoremIpsum.getInstance().getTitle(1);
+        return fillFirstName(LoremIpsum.getInstance().getFirstName())
+                .fillLastName(LoremIpsum.getInstance().getLastName())
+                .fillAddress(LoremIpsum.getInstance().getLastName())
+                .fillCity(LoremIpsum.getInstance().getCity())
+                .fillState(LoremIpsum.getInstance().getName())
+                .fillZipCode(1200)
+                .fillPhone(LoremIpsum.getInstance().getPhone())
+                .fillSsn(LoremIpsum.getInstance().getPhone())
+                .fillUsername(username)
+                .fillPassword(username)
+                .fillConfirmPassword(username)
+                .clickRegisterBtn();
     }
 }
