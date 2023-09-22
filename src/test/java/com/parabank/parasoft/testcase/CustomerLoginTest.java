@@ -27,7 +27,7 @@ public class CustomerLoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getPageTittle(), ParaBankString.LOGIN_TITLE);
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void loginShouldSucceed() {
         HomePage homePage = page.getInstance(CustomerLoginPage.class)
                 .fillUsername(getUsername())

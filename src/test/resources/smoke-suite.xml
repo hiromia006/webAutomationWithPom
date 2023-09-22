@@ -5,10 +5,9 @@
         <listener class-name="com.parabank.parasoft.report.TestListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true" name="Smoke Suites">
-        <classes>
-            <class name="com.parabank.parasoft.testcase.CustomerLoginTest"></class>
-            <class name="com.parabank.parasoft.testcase.RegisterTest"></class>
-            <class name="com.parabank.parasoft.testcase.OpenNewAccountTest"></class>
-        </classes>
+     <packages>
+         <package name="com.parabank.parasoft.testcase.*"></package>
+     </packages>
+        
     </test>
 </suite>
