@@ -16,6 +16,7 @@
  1. Email configure  from Manage jenkins > System > E-mail Notification:
  2. Email configure from from Manage jenkins > System > Extended E-mail Notification
  3. Gradle: Dashboard > Manage Jenkins > Tools
+ 4. Integrating Jenkins with GitHub using SSH: Dashboard > Manage Jenkins >> Credentials >> click on "(global)" >> Add Credentials
     
  ## Note
  1. Run the command from Manage jenkins > Script Console :
