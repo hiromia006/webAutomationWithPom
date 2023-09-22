@@ -46,6 +46,7 @@ public class RegisterPage extends BasePage {
     }
 
     public RegisterPage fillSsn(String ssn){
+
         return this;
     }
 
