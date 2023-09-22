@@ -12,9 +12,10 @@
    10. Extended Report
    11. GitHub
        
- ## Email configuration for Jenkins | SMTP configuration
- 1. Email configure from from Manage jenkins > System > E-mail Notification:
+ ## Jenkins configuration
+ 1. Email configure  from Manage jenkins > System > E-mail Notification:
  2. Email configure from from Manage jenkins > System > Extended E-mail Notification
+ 3. Gradle: Dashboard > Manage Jenkins > Tools
     
  ## Note
  1. Run the command from Manage jenkins > Script Console :
